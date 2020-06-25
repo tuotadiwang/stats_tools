@@ -14,4 +14,13 @@ def plot_ecdf(x,y,xlabel):
     _=plt.plot(x,y,marker='.',linestyle='none')
     _=plt.xlabel(xlabel)
     _=plt.ylabel('ECDF')
+    _plt.margins(0.02)
+    plt.show()
+
+# plot PMF (probability mass function)
+def plot_pmf(data):
+    bins=np.arange(min(data),max(data)+1 +1)-0.5
+    _=plt.hist(data, bins=bins, normed=True)
+    _=plt.xlabel('number')
+    _=plt.ylabel('PMF')
     plt.show()

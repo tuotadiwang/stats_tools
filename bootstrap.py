@@ -29,7 +29,7 @@ def draw_bs_pairs_linreg(x,y,size=1):
         return bs_slope_reps, bs_intercept_reps
 
 # plot bs_pairs_linreg
-def bs_pairs_linreg(x,y,size=1):
+def plot_bs_pairs_linreg(x,y,size=1):
     bs_slope_reps, bs_intercept_reps = draw_bs_pairs_linreg(x, y, size=1)
     xl=np.array([0,100])
     for i in range(100):

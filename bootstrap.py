@@ -28,4 +28,15 @@ def draw_bs_pairs_linreg(x,y,size=1):
         bs_slope_reps[i], bs_intercept_reps[i] = np.polyfit(bs_x,bs_y,1)
         return bs_slope_reps, bs_intercept_reps
 
-
+# plot bs_pairs_linreg
+def bs_pairs_linreg(x,y,size=1):
+    bs_slope_reps, bs_intercept_reps = draw_bs_pairs_linreg(x, y, size=1)
+    xl=np.array([0,100])
+    for i in range(100):
+        _=plt.plot(x, bs_slope_reps[i]*xl + bs_intercept_reps[i],
+                   linewidth=0.5, alpha=0.2, color='red')
+    _=plt.plot(x,y, marker='.',linestyle='none')
+    _=plt.xlabel('x')
+    _=plt.ylabel('y')
+    plt.margins(0.02)
+    plt.show()
